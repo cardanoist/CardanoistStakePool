@@ -16,6 +16,69 @@
 		<!-- Site Title -->
 		<title>Cardanoist</title>
 
+		<style type="text/css">
+        	* {
+            	padding: 0px;
+            	margin: 0px;
+        	}
+
+        	body {
+            	font-family: 'Arial';
+            	font-size: 14px;
+            	line-height: 20px;
+            	color: white;
+            	background: black;
+       		}
+
+        	.a,
+        	.a:visited {
+            	color: white;
+            	text-decoration: underline;
+        	}
+
+        	.a:hover {
+        	}
+
+        	.btn,
+        	a.btn,
+        	a.btn:visited {
+            	text-decoration: none;
+            	color: white;
+            	display: inline-block;
+            	cursor: pointer;
+            	border: 1px solid #c1c1c1;
+            	border-bottom: 2px solid #c1c1c1;
+            	padding: 5px; border-radius: 2px;
+            	transition: all 250ms;
+            	font-size: 14px;
+        	}
+
+        	.btn:hover {
+            	box-shadow: 0px 0px 12px 0px rgba(255,255,255, 0.5);
+            	background: rgba(255,255,255,0.3);
+        	}
+
+        	.mainBox {
+            	width: 500px;
+            	display: inline-block;
+            	border-radius: 2px;
+            	background: rgba(255,255,255,0.2);
+            	margin-top: 200px;
+        	}
+
+        	@media only screen and (max-width: 600px) {
+            	.mainBox {
+                	width: 300px;
+            	}
+        	}
+
+        	@media only screen and (max-height: 700px) {
+            	.mainBox {
+                	margin-top: 50px;
+            	}
+        	}
+    	</style>
+
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--
 			CSS
@@ -29,6 +92,7 @@
 			<link rel="stylesheet" href="css/animate.min.css">
 			<link rel="stylesheet" href="css/owl.carousel.css">				
 			<link rel="stylesheet" href="css/main.css">
+			<link rel="stylesheet" href="css/particles-wrapper.css">				
 		</head>
 		<body>	
 		  <header id="header">
@@ -40,12 +104,12 @@
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
 			          <li><a href="index.html">Home</a></li>
-			          <li><a href="contact.html">Contact</a></li>
-			          <li><a href="services.html">Subscribe</a></li>
+			          <li><a href="index.html#contactUs">Contact</a></li>
+			          <li><a href="index.html#mc_embed_signup">Subscribe</a></li>
 			          <li class="menu-has-children"><a href="">Language</a>
 			            <ul>
-			              <li><a href="blog-home.html">Turkish</a></li>
-			              <li><a href="blog-single.html">English</a></li>
+			              <li><a href="turkishIndex.html">Turkish</a></li>
+			              <li><a href="index.html">English</a></li>
 			            </ul>
 			          </li>				          		          
 			        </ul>
@@ -54,22 +118,47 @@
 		    </div>
 		  </header><!-- #header -->
 
+		    <script type="text/javascript" src="js/nodes.js"></script>
+    		<script type="text/javascript">
+        		var nodesjs = new NodesJs({
+            		id: 'nodes',
+            		width: window.innerWidth,
+            		height: window.innerHeight,
+            		particleSize: 2,
+            		lineSize: 1,
+            		particleColor: [255, 255, 255, 0.3],
+            		lineColor: [255, 255, 255],
+            		backgroundFrom: [10, 25, 100],
+            		backgroundTo: [25, 50, 150],
+            		backgroundDuration: 4000,
+            		nobg: false,
+            		number: window.hasOwnProperty('orientation') ? 30: 100,
+            		speed: 20
+        		});
+    		</script>
+
+    		<div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%;">
+        		<canvas id="nodes"></canvas>
+    		</div>	
+
 			<!-- start banner Area -->
 			<section class="banner-area">
 				<div class="container">
 					<div class="row fullscreen align-items-center justify-content-between">
 						<div class="col-lg-6 col-md-6 banner-left">
-							<h6>About Us</h6>
+							<h4 style="color:white;">About Us</h4>
 							<br>
-							<p>
+							<p style="color:white;">
 								We are a team of entrepreneurs and engineers who aim to promote decentralization of Cardano Blockchain and provide quality services to Cardano community.
 							</p>
 						</div>
-						<div class="col-lg-6 col-md-6 home-about-right">
-							<img class="img-fluid" src="img/cardano-logo.png" alt="">
+						<div class="col-lg-6 col-md-6 banner-right">
+							<img class="img-fluid" src="img/logo-cardano-bw.png" alt="">
 						</div>
+
 					</div>
-				</div>					
+				</div>	
+		
 			</section>
 			<!-- End banner Area -->
 
@@ -81,7 +170,8 @@
 							<img class="img-fluid" src="img/istanbul-bosphorus.png" alt="">
 						</div>
 						<div class="col-lg-5 col-md-6 home-about-right">
-							<h6>Staking with love..</h6>
+							<h5>Staking with love &#x2665;	</h5>
+							<br>
 							<p>
 								Our pool server is located in a top quality data center in Istanbul with a backup server in Izmir.
 							</p>
@@ -93,7 +183,7 @@
 
 			<!-- Start services Area -->
 			<section class="services-area section-gap">
-				<div class="container">
+				<div class="container" id="contactUs">
 		            <div class="row d-flex justify-content-center">
 		                <div class="menu-content  col-lg-7">
 		                    <div class="title text-center">
@@ -121,8 +211,11 @@
 									Copyright &copy;<script>document.write(new Date().getFullYear());</script> cardanoist.com
 								</p>	
 								<p>
-									All rights reserved.
-								</p>			
+									All rights reserved
+								</p>
+								<p>
+									Designed by Colorlib			
+								</p>
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-6 col-sm-6">
@@ -159,6 +252,16 @@
             </footer>
             <!-- End footer Area -->		
 
+
+    <!-- </nodes.js embedding> -->
+
+    		<script type="text/javascript">
+        		window.onresize = function () {
+            		nodesjs.setWidth(window.innerWidth);
+            		nodesjs.setHeight(window.innerHeight);
+        		};
+    		</script>
+			<script src="js/particles.js"></script>
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="js/popper.min.js"></script>
 			<script src="js/vendor/bootstrap.min.js"></script>			
